@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'ng-test-formacao-angular-alura';
+  public title = 'ng-test-formacao-angular-alura';
+  public likes = 0;
+
+  public like(): void {
+    this.likes++;
+  }
 }
