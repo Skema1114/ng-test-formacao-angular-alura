@@ -11,7 +11,9 @@
     "test-ci": "ng test --watch=false --browsers ChromeHeadless,FirefoxHeadless",
     "test-ci-custom": "ng test --watch=false --browsers FirefoxSemCabeca",
     "test-ci-reporter": "ng test --watch=false --browsers ChromeHeadless,FirefoxHeadless --reporters junit",
-    "test-coverage": "ng test --watch=false --sourceMap=true --codeCoverage=true --browsers ChromeHeadless"
+    "test-coverage": "ng test --watch=false --sourceMap=true --codeCoverage=true --browsers ChromeHeadless",
+    "api": "node ./server/server.js",
+    "all": "concurrently \"npm run api\" \"npm run start\""
   },
   "private": true,
   "dependencies": {
@@ -38,6 +40,10 @@
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "@types/uuid": "^8.3.0",
+    "concurrently": "^6.2.0",
+    "cors": "^2.8.5",
+    "datauri": "^3.0.0",
+    "express": "^4.17.1",
     "jasmine-core": "~3.7.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
