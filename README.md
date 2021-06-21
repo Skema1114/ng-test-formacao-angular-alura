@@ -2,10 +2,15 @@
 
 ## Neste projeto:
 
-- Curso:
+- Primeiro curso:
 
   - Angular: Testes automatizados com Jasmine e Karma
   - https://cursos.alura.com.br/course/angular-testes-automatizados-jasmin-karma
+
+- Segundo curso:
+
+  - Angular: Avançando com testes automatizados
+  - https://cursos.alura.com.br/course/angular-avancando-testes-automatizados
 
 ## Comandos utilizados
 
