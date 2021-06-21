@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+
 import { UniqueIdService } from '../../services/unique-id/unique-id.service';
 
 @Component({
