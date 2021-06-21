@@ -14,6 +14,8 @@
 - npm install @fortawesome/angular-fontawesome
 - npm install uuid@8.3.0
 - npm i --save-dev @types/uuid
+- npm i -D karma-firefox-launcher
+- npm i -D karma-junit-reporter
 
 ## Anotações
 
@@ -30,6 +32,8 @@
 - Não é recomendado chamar o `fixture.detectChanges()` no `beforeEach` porque caso seja necessario passar uma propriedade pro `ngOnInit` em algum dos `it`s, o `ngOnInit` será chamado antes da propriedade ser passada, então o o `fixture.detectChanges()` precisa estar nos testes que precisam do mesmo e no momento exato, por exemplo, passar as propriedades primeiro e depois chamar o `change tetection`;
 - A função `it` recebe um parametro, geralmente chamado de `done`, quando o mesmo é declarado e nao chamado, da um `timeout` e retorna um erro de teste, quando são operações assincronas pequenas, é opcional chamar o `done()` quando aquela parte assincrona terminar, pois assim pode-se ter uma certeza que aquela parte foi executada. Pode-se utilizar essa estratégia também quando precisa testar se um determinado método foi chamado ou não;
 - Na convenção (do instrutor) é adicionar um `(@Input)` e o nome da variável `(@Input id)` informando que aquele determinádo método recebe uma input property, essa convenção também é valida para outputs propertys, no caso destas pode-se adicionar o `(@Output)` e o nome da variável, exemplo `(@Output liked)` facilitando a visualização dos testes que recebem estas propriedades;
+- Para adicionar outro browser nos testes do karma, é necessário instalar as dependências (exemplo `npm i -D karma-firefox-launcher`) e depois no arquivo `karma.config.js`, adicioná-lo em `plugins` (exemplo, `equire("karma-firefox-launcher"),`) e colocar na lista em `browsers` (exemplo, `browsers: ["Chrome", "Firefox"],`, **OBS:** O INSTRUTOR NÃO RECOMENDA DEIXAR ATRELADO A DIVERSOS NAVEGADORES A INICIALIZAÇÃO PADRÃO DO TESTE E SIM A CRIAÇÃO DE UM SCRIPT SECUNDÁRIO QUE TESTA EM TODOS OS NAVEGADORES UTILIZADOS) (**OBS:** É NECESSÁRIO TER OS NAVEGADORES INSTALADOS NO PC);
+- **DICA SHOW:** Criar um script separado para iniciar o teste com todos os navegadores desenjados e um teste padrão com o chrome, no `package.json` foi adicionado um `script` (em `scripts`) chamado teste-common (`"test-common": "ng test --browsers Chrome,Firefox"`) que inicia o teste em todos os naegadores comuns, paa executá-lo basta rodar o comando `npm run test-common`;
 
 ## Estrutura básica e padrão dos testes com o Jasmine
 
