@@ -1,0 +1,22 @@
+<h1>Primeiro curso</h1>
+
+<app-like-widget [likes]="likes" (liked)="like()"></app-like-widget>
+
+<h1>Segundo curso</h1>
+
+<app-photo-board
+  *ngIf="photos$ | async as photos; else loaderTemplate"
+  [photos]="photos"
+></app-photo-board>
+
+<ng-template #loaderTemplate>
+  <div class="loader">
+    <fa-icon
+      *ngIf="fa.faCircleNotch"
+      [icon]="fa.faCircleNotch"
+      [spin]="true"
+      size="4x"
+      aria-busy="true"
+    ></fa-icon>
+  </div>
+</ng-template>

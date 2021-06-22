@@ -1,9 +1,9 @@
 import { SimpleChange, SimpleChanges } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Photos } from './interface/photos';
 
 import { PhotoBoardComponent } from './photo-board.component';
 import { PhotoBoardModule } from './photo-board.module';
+import { buildPhotoList } from './test/build-photo-list';
 
 describe(PhotoBoardComponent.name, () => {
   let fixture: ComponentFixture<PhotoBoardComponent>;
@@ -36,17 +36,3 @@ describe(PhotoBoardComponent.name, () => {
       .toBe(4);
   });
 });
-
-function buildPhotoList(): Photos {
-  const photos: Photos = [];
-
-  for (let i = 0; i < 8; i++) {
-    photos.push({
-      id: i + 1,
-      url: '',
-      description: '',
-    });
-  }
-
-  return photos;
-}
