@@ -4,6 +4,7 @@ import {
   TestBed,
   tick,
 } from '@angular/core/testing';
+
 import { PhotoFrameComponent } from './photo-frame.component';
 import { PhotoFrameModule } from './photo-frame.module';
 

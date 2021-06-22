@@ -43,6 +43,9 @@
 - Quando chama o `fixture.detectChanges()`, atualiza uma propriedade (exemplo: `component.likes++`) e depois quer verificar se alterou o valor deste componente na DOM, é preciso chamar novamente o `fixture.detectChanges()` para atualizar os elementos da DOM e então depois disso fazer a verificação desejado com os valores dos componentes localizados na mesma;
 - **DICA DO CURSO:** Instâncias de `ComponentFixture<T>` têm uma referência para a representação do template do componente no DOM permitindo que o desenvolvedor possa fazer pesquisas;
 - Quando os testes fazem integração com a DOM, estes normalmente podem ser executados mais lentos do que os outros. Testes de DOM são mais lentos então por convenção do instrutor, os que interagem na DOM recebem as iniciais `(D)`para serem faceis de diferenciar (há pessoas que separam ops testes de DOM em arquivos separados contendo apenas testes de DOM que são os mais lentos);
+- **DICA SHOW:** Quando tiver dentro de um `subscribe`, sempre passar o `done()` nos parâmetros do `it` e adicionar o mesmo ao final do `subscribe`;
+- **DICA SHOW:** Fazer um `it` para cada teste e tentar não fazer um teste que faça 2 verificações;
+- O `fixture.nativeElement` e o `fixture.debugElement.nativeElement` tem a mesma finalidade com a diferença de que o último é possível fazer querys mais específicas em um determinado pedaço do DOM associado com o componente, ou seja **PALAVRAS DO CURSO:** ele tem como referência o elemento nativo associado ao template do componente, inclusive possui uma forma exclusiva do Angular de procura de elementos;
 
 ## Estrutura básica e padrão dos testes com o Jasmine
 
