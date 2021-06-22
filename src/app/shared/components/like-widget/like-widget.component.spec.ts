@@ -6,6 +6,7 @@ import { LikeWidgetModule } from './like-widget.module';
 describe(LikeWidgetComponent.name, () => {
   let fixture: ComponentFixture<LikeWidgetComponent>;
   let component: LikeWidgetComponent;
+  let likeName = LikeWidgetComponent.prototype.like.name;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -16,16 +17,16 @@ describe(LikeWidgetComponent.name, () => {
     component = fixture.componentInstance;
   });
 
-  it('Should create component', () => {
+  it('Should create component;', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Should auto-generate ID during ngOnInit when (@Input id) is not assigned', () => {
+  it(`Should auto-generate ID during ngOnInit when (@Input id) is not assigned;`, () => {
     fixture.detectChanges();
     expect(component.id).toBeTruthy();
   });
 
-  it('Should NOT auto-generate ID during ngOnInit when (@Input id) is assigned', () => {
+  it(`Should NOT auto-generate ID during ngOnInit when (@Input id) is assigned;`, () => {
     const someId = 'someId';
     component.id = someId;
     fixture.detectChanges();
@@ -33,8 +34,7 @@ describe(LikeWidgetComponent.name, () => {
     expect(component.id).toBe(someId);
   });
 
-  it(`#${LikeWidgetComponent.prototype.like.name}
-   should trigger (@Output liked) when called`, () => {
+  it(`#${likeName} should trigger (@Output liked) when called;`, () => {
     spyOn(component.liked, 'emit');
     fixture.detectChanges();
     component.like();
@@ -42,7 +42,7 @@ describe(LikeWidgetComponent.name, () => {
     expect(component.liked.emit).toHaveBeenCalled();
   });
 
-  it(`(D) Should display number of likes when clicked`, (done) => {
+  it(`(D) Should display number of likes when clicked;`, (done) => {
     fixture.detectChanges();
     component.liked.subscribe(() => {
       component.likes++;
@@ -59,7 +59,7 @@ describe(LikeWidgetComponent.name, () => {
     likeWidgetContainerEl.click();
   });
 
-  it(`(D) Should display number of likes when ENTER key is pressed`, (done) => {
+  it(`(D) Should display number of likes when ENTER key is pressed;`, (done) => {
     fixture.detectChanges();
     component.liked.subscribe(() => {
       component.likes++;
