@@ -14,13 +14,13 @@
 
 ## Comandos utilizados
 
-- npm install @fortawesome/fontawesome-svg-core
-- npm install @fortawesome/free-solid-svg-icons
-- npm install @fortawesome/angular-fontawesome
-- npm install uuid@8.3.0
-- npm i --save-dev @types/uuid
-- npm i -D karma-firefox-launcher
-- npm i -D karma-junit-reporter
+- `npm install @fortawesome/fontawesome-svg-core`
+- `npm install @fortawesome/free-solid-svg-icons`
+- `npm install @fortawesome/angular-fontawesome`
+- `npm install uuid@8.3.0`
+- `npm i --save-dev @types/uuid`
+- `npm i -D karma-firefox-launcher`
+- `npm i -D karma-junit-reporter`
 
 ## Anotações
 
